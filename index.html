@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f5;
+      overflow-x: hidden;
+      color: #4a4a4a;
+    }
+    
+    .dancing-font {
+      font-family: 'Dancing Script', cursive;
+    }
+    
+    .heart {
+      position: absolute;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-40px) rotate(20deg); }
+    }
+    
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      animation: balloon 12s ease-in-out infinite;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    
+    @keyframes balloon {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+      50% { transform: translateY(-150px) translateX(50px); opacity: 1; }
+    }
+    
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 5px;
+      animation: firework 1.5s ease-out forwards;
+      opacity: 0;
+      z-index: 2;
+    }
+    
+    @keyframes firework {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      animation: sparkle 1s ease-out forwards;
+      opacity: 0;
+      z-index: 3;
+    }
+    
+    @keyframes sparkle {
+      0% { transform: scale(0.5); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+    
+    .content-wrapper {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .envelope {
+      transition: all 0.5s ease;
+      transform-style: preserve-3d;
+    }
+    
+    .envelope:hover {
+      transform: translateY(-10px) rotateY(10deg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    
+    #music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="relative overflow-x-hidden min-h-screen">
+  <!-- Background elements -->
+  <div id="hearts-container"></div>
+  <div id="balloons-container"></div>
+  <div id="fireworks-container"></div>
+  <div id="sparkle-container"></div>
+  
+  <!-- Audio element for music (initially silent for autoplay) -->
+  <audio id="bg-music" loop>
+    <!-- Replace with romantic music URL -->
+    <source src="C:\Users\manug\Downloads\Perfect - 320Kbps-(Mr-Jat.in) - Copy.mp3" type="audio/mpeg">
+  </audio>
+  
+  <div class="content-wrapper">
+    <!-- Header Section -->
+    <header class="relative z-10 pt-16 pb-8">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-7xl font-bold mb-6 dancing-font text-pink-600">Happy Birthday My Love!</h1>
+        <div class="max-w-3xl mx-auto relative">
+          <div class="absolute -inset-3 bg-pink-300 rounded-lg blur opacity-75"></div>
+          <div class="relative bg-white rounded-lg p-8 shadow-xl transform hover:scale-105 transition duration-500">
+            <p class="text-2xl md:text-3xl dancing-font text-pink-700">
+              You light up my world every single day...
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Love Letter Section -->
+    <section class="container mx-auto px-4 mb-16">
+      <div class="max-w-3xl mx-auto rounded-xl shadow-2xl overflow-hidden">
+        <div class="envelope p-8 md:p-12 bg-gradient-to-br from-pink-50 to-red-50">
+          <svg class="w-20 h-20 mx-auto mb-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          <h2 class="text-4xl font-bold mb-8 text-center dancing-font text-pink-700">To My Dearest</h2>
+          
+          <div class="prose max-w-none text-gray-700 px-4">
+            <p class="mb-6 dancing-font text-2xl">My love,</p>
+            
+            <p class="mb-6 text-lg">On this special day, I want the whole world to know how grateful I am that you exist. You've transformed my life in ways I never imagined possible. Your laughter is my favorite sound, your smile my favorite sight, and your love my greatest treasure.</p>
+            
+            <p class="mb-6 text-lg">You deserve all the happiness in the world today and every day. I hope this little website makes you smile and feel as special as you make me feel every single moment we're together.</p>
+            
+            <p class="mb-6 dancing-font text-2xl">Happy Birthday to the woman who holds my heart in her hands.</p>
+            
+            <p class="dancing-font text-2xl">With all my love,</p>
+            <p class="dancing-font text-3xl text-pink-700 mt-4">[stranger]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Photo Gallery Section -->
+    <section class="container mx-auto px-4 mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center dancing-font text-pink-600">Our Beautiful Memories</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        <!-- Replace these with actual photos of your girlfriend -->
+        <div class="photo-container relative rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-3 transition duration-500">
+          <img src="C:\Users\manug\Downloads\IMG_20250628_112118 (1).jpg" alt="Your girlfriend smiling in a beautiful dress at sunset with golden light" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 opacity-0 hover:opacity-100 transition duration-500">
+            <p class="text-white text-lg dancing-font font-medium">Beautiful Smile</p>
+          </div>
+        </div>
+        
+        <div class="photo-container relative rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-3 transition duration-500">
+          <img src="C:\Users\manug\Downloads\IMG_20250627_005308_420 (1).jpg" alt="Candid shot of your girlfriend laughing with eyes sparkling" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 opacity-0 hover:opacity-100 transition duration-500">
+            <p class="text-white text-lg dancing-font font-medium">Joyful Moments</p>
+          </div>
+        </div>
+        
+        <div class="photo-container relative rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-3 transition duration-500">
+          <img src="C:\Users\manug\Downloads\IMG_20250628_113210_936.jpg" alt="Your girlfriend posing in nature wearing casual outfit looking happy" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 opacity-0 hover:opacity-100 transition duration-500">
+            <p class="text-white text-lg dancing-font font-medium">Natural Beauty</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Music toggle button -->
+  <div id="music-toggle" title="Toggle Music">
+    <svg id="music-icon" class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 012.728-2.728"></path>
+    </svg>
+  </div>
+  
+  <footer class="relative z-10 bg-pink-100 py-10 mt212">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-xl text-pink-800 dancing-font">Made with endless love for you</p>
+      <p class="text-pink-600 mt-2">Happy Birthday!</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Create floating hearts
+    function createHearts() {
+      const colors = ['#ff6b6b', '#ff8787', '#f06595', '#e599f7', '#cc5de8'];
+      
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.fontSize = (Math.random() * 30 + 15) + 'px';
+        heart.style.opacity = Math.random() * 0.6 + 0.4;
+        heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        heart.style.animationDelay = (Math.random() * 3) + 's';
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        document.body.appendChild(heart);
+      }
+    }
+    
+    // Create floating balloons
+    function createBalloons() {
+      const colors = ['#ff6b6b', '#4dabf7', '#51cf66', '#fcc419', '#cc5de8'];
+      
+      for (let i = 0; i < 20; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.top = window.innerHeight + 'px';
+        balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        balloon.style.opacity = Math.random() * 0.6 + 0.4;
+        balloon.style.animationDelay = Math.random() * 10 + 's';
+        balloon.style.animationDuration = Math.random() * 20 + 10 + 's';
+        document.body.appendChild(balloon);
+        
+        // Add balloon string
+        const string = document.createElement('div');
+        string.style.position = 'absolute';
+        string.style.left = '50%';
+        string.style.top = '100%';
+        string.style.width = '2px';
+        string.style.height = Math.random() * 30 + 30 + 'px';
+        string.style.backgroundColor = '#aaa';
+        string.style.opacity = '0.5';
+        balloon.appendChild(string);
+      }
+    }
+    
+    // Create fireworks
+    function createFirework(x, y) {
+      const colors = ['#ff6b6b', '#4dabf7', '#51cf66', '#fcc419', '#cc5de8', '#20c997'];
+      
+      for (let i = 0; i < 80; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'firework';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.width = Math.random() * 8 + 4 + 'px';
+        particle.style.height = Math.random() * 8 + 4 + 'px';
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.boxShadow = `0 0 ${Math.random() * 15 + 5}px ${Math.random() * 5 + 3}px`;
+        particle.style.setProperty('--tx', (Math.random() - 0.5) * 300 + 'px');
+        particle.style.setProperty('--ty', (Math.random() - 0.5) * 300 + 'px');
+        particle.style.animationDuration = Math.random() * 1 + 1 + 's';
+        document.body.appendChild(particle);
+      }
+    }
+    
+    // Create sparkles
+    function createSparkle(x, y) {
+      for (let i = 0; i < 15; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = x + (Math.random() - 0.5) * 50 + 'px';
+        sparkle.style.top = y + (Math.random() - 0.5) * 50 + 'px';
+        sparkle.style.backgroundColor = 'white';
+        sparkle.style.animationDelay = Math.random() * 0.3 + 's';
+        sparkle.style.transformOrigin = 'center center';
+        document.body.appendChild(sparkle);
+      }
+    }
+    
+    // Music control
+    function setupMusicPlayer() {
+      const audio = document.getElementById('bg-music');
+      const musicToggle = document.getElementById('music-toggle');
+      const musicIcon = document.getElementById('music-icon');
+      
+      // Try to autoplay (will be muted in most browsers without interaction)
+      audio.volume = 0.3;
+      const promise = audio.play();
+      
+      if (promise !== undefined) {
+        promise.catch(error => {
+          // Autoplay failed - wait for user interaction
+          musicIcon.innerHTML ="C:\Users\manug\Downloads\Perfect - 320Kbps-(Mr-Jat.in) - Copy (2).mp3";
+        });
+      }
+      
+      musicToggle.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          musicIcon.innerHTML = "C:\Users\manug\Downloads\Perfect - 320Kbps-(Mr-Jat.in) - Copy (2).mp3"
+        } else {
+          audio.pause();
+          musicIcon.innerHTML = "C:\Users\manug\Downloads\Perfect - 320Kbps-(Mr-Jat.in) - Copy (2).mp3"
+        }
+      });
+    }
+    
+    // Trigger fireworks on page load
+    function launchInitialFireworks() {
+      setTimeout(() => {
+        createFirework(window.innerWidth / 4, window.innerHeight / 3);
+      }, 300);
+      
+      setTimeout(() => {
+        createFirework(window.innerWidth / 2, window.innerHeight / 4);
+      }, 800);
+      
+      setTimeout(() => {
+        createFirework(window.innerWidth * 3/4, window.innerHeight / 3);
+      }, 1300);
+    }
+    
+    // Trigger sparkles randomly
+    function triggerRandomSparkles() {
+      setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        createSparkle(x, y);
+      }, 500);
+    }
+    
+    // Initialize everything when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      createHearts();
+      createBalloons();
+      launchInitialFireworks();
+      triggerRandomSparkles();
+      setupMusicPlayer();
+      
+      // Also trigger fireworks when clicking
+      document.addEventListener('click', (e) => {
+        createFirework(e.clientX, e.clientY);
+      });
+    });
+  </script>
+</body>
+</html>
